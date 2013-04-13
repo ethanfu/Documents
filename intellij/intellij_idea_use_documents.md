@@ -46,8 +46,10 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 	这个顾名思义是省电模式,在主菜单`File`下面,当你勾选此模式以后,IntelliJ IDEA不会给你完成任何自动完成的功能,例如本来你输入一个字符会自动提示的,勾选以后就没有了,如果出现此问题的话可以考虑是不是自己手贱点过这个按钮噢.
 
 ### 最后
-第一次发文,如果有什么问题欢迎留言交流,文档放在github上,也欢迎各位把自己的心得能共同整理出来给后来者查看.
-### 附录
-* Win快捷键 [Win Link](http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 
-* Mac OS 快捷键 [Mac OS Link](http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf)
+第一次发文,如果有什么问题欢迎留言交流,文档放在[github](https://github.com/fxl545826/Documents)上,各位如果也有一些技巧不妨共同完善下本文档.如有新内容,本文档会持续更新.
+
+### 附录
+* Win快捷键 [Win Keymap](http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+
+* Mac OS 快捷键 [Mac OS Keymap](http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf)
