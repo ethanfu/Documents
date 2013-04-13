@@ -53,8 +53,10 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 在IntelliJ中如果你是传统的Java EE的结构(根目录下面有src,webMoudle这样的结构),那么在直接在Run Configurations中添加一个Tomcat即可,点击+号添加即可(当然需要注意虽然没搜索框,你输入字符会自动给你筛选结果),这样运行的时候修改Java文件的话需要主动Make Project也就是`⌘+F9 (Make Project)`.但是如果你是符合maven约定的项目结构的话如果继续这样配置就很不理想了,每次修改了jsp文件竟然也需要Make Project才可以,因为每次Make Project以后IntelliJ会自动给你DeployMent,这样好似又回到了几年前那种很麻烦的环境.
 
 这个问题其实很容易解决,就是不要使用这种方式来运行你的web项目,既然符合maven结构的项目自然是使用maven或者gradle这种构建工具了,那么你需要利用maven的jetty的插件来运行项目即可了,如下图配置即可:
-![idea-maven-run](images/idea-maven-run.png)    
-当然你也可以如下图直接点击运行就会自动添加一个:    
+![idea-maven-run](images/idea-maven-run.png)  
+  
+当然你也可以如下图直接点击运行就会自动添加一个:   
+  
 ![maven-jetty-plugin-run](images/maven-jetty-plugin-run.png)       
 参看上图其实也没必须非用jetty,用tomcat6或者tomcat7的插件运行也可以.
 
