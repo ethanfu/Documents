@@ -53,19 +53,68 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 
 这个问题其实很容易解决,就是不要使用这种方式来运行你的web项目,既然符合maven结构的项目自然是使用maven或者gradle这种构建工具了,那么你需要利用maven的jetty的插件来运行项目即可了,如下图配置即可:
 ![idea-maven-run](images/idea-maven-run.png)
-当然你也可以如下图直接点击运行就会自动添加一个了
-![maven-jetty-plugin-run](images/maven-jetty-plugin-run.png)
+当然你也可以如下图直接点击运行就会自动添加一个:
+![maven-jetty-plugin-run](images/maven-jetty-plugin-run.png)       
 参看上图其实也没必须非用jetty,用tomcat6或者tomcat7的插件运行也可以.
+
+##Eclipse的web结构项目如何导入和运行
+鉴于有一些用户还没转型Maven等来构建项目,当然我也衷心的说一句,构建这块还是赶紧转了吧.因为不转的话还单独出来这个章节,并且有的操作还是相当麻烦,下面也会讲到,还是一一道来吧,导入的时候有两个选择然后我分两个部分说明,点击`File > Import Project…`,然后选择你的项目目录,点击OK,如下图:
+![image](images/import_eclipse_web_project.png)
+
+### 使用新建项目来导入
+这个方式图中所示的第一种,导入基本就是一路next到完成,但是你第一次也可以费点心思注意下每一步做了啥,例如帮你分析了jar有哪一些,如果你使用了Spring还给你分析你的所有配置文件.最后完成以后项目就开始构建索引,等一切就绪以后我们就可以完成的基本配置了,由于是web项目基本上能够在Tomcat等服务器上跑起来就基本算成功了.主要几个点:  
+
+* 处理好依赖关系,因为我们没使用maven,所以你得自己动手丰衣足食了
+* 设置java文件的编译路径,如果需要的话
+* 添加你的Tomcat,运行成功
+
+#### 依赖关系
+打开`File > Project Structure` ,本节我们主要用到下图几个标红的部分:
+![project_structure](images/project_structure.png)    
+我们先了解下这几个主要部件:
+
+* **SDKs:**主要存放了我们的JDK等,如下图(我自己下载带source的JDK,这样可以直接查看JDK相关的Java源代码):
+![project_structure_sdks](images/project_structure_sdks.png)    
+* **Global Libraries:**主要是公用的jar文件,例如servlet的几个jar可能每个项目都需要,但是Eclipse的变量在此变得不好使,所以需要使用这个地方来配置,如下图参照使用即可:
+![project_strutcture_global](images/project_strutcture_global.png)
+* **Facets:**在此不做介绍,如有需要后续添加
+* **Libraries:**这里基本是项目的库,不是全局的,导入的项目一般都会把你Eclipse中的.classpath中的所有的依赖都导过来作为一个lib库,然后应用到你的项目的模块中
+* **Modules:**这个基本包括了项目的模块,通常来说Eclipse的项目结构中是单模块的
+
+我们需要做的配置主要在Modules中,其他的几个自己根据理解配置即可.
+
+1. 我们先查看**Modules**中的**Sources**,如下图:
+![project_structure_modules_sources](images/project_structure_modules_sources.png)   
+把项目所有的源码都添加即可,图中所示我的项目中其实少了resource的文件夹,这样我选中resource然后点击Sources即可,这样就会在左边的Source Folders中添加一个resource的文件夹.
+2. 然后是Paths部分,这个主要是class的输出路径,默认是在根目录下的out文件夹中,如果项目中对配置文件的解析等有写死路径,必须严格遵循Java EE的规范的话,那么需要将此部分修改如下(如果不存在我假设的情况可忽略本步骤):![project_structure_modules_paths](images/project_structure_modules_paths.png)    
+3. 然后的Dependencies,就更好配置了,添加需要的依赖即可.
+
+这些步骤完成以后我们就可以点击`Run > Edit Configurations` ,点击左上角的**+**号,然后选择**Tomcat > Local Server **,这些步骤和Eclipse类似,选择相应路径等等,只需要注意一点就可以,就是需要添加一个DeployMent,如下图:![run_configurations_tomcat](images/run_configurations_tomcat.png)    
+**如果是Windows的图中的DeployMent中的+号可能是在右侧**,点击之后会弹出对话框选择文件夹,选择eclipse默认的webMoudle文件夹即可(MyEclipse就是WebRoot文件夹),这个一定不能选错,不要选成项目的主文件夹,否则运行就不成功了,再然后`ctrl+R`运行即可.以debug方式运行就是`ctrl+D`.
+
+
+
+### 使用IntelliJ对Eclipse项目的支持导入项目
+基本参照上个基本都类似,就是步骤比上个步骤要少点,如果出现问题参照上个章节即可.
+
+## HQL查询支持
+以前Eclipse有个HQL的插件可以直接输入HQL语法,查询测试结果是否正确,在IntelliJ中你也可以,不过不需要任何插件默认提供支持的,如果在导入项目的时候没有自动添加Hibernate的支持的话,那需要添加一下Hibernate的支持,鼠标选中项目,点击右键如下图:
+![image](images/add_support_framework.png)    
+点击选择Hibernate即可,如果没有Hibernate应该是项目已经自动添加了Hibernate的支持了.然后完成以后就可以如下图操作即可:
+![image](images/hql_search.png)    
+选中上面HQL图标,在出来的控制台输入你想输入的HQL即可了,一样可以自动完成的哦.
 
 ## 注意事项
 1. IntelliJ对于文件是默认随时保存的,基本不需要你`⌘+s`,所以需要注意不要随手不小心把某个文件改了下,然后直接关闭标签了,其实你的无意的操作已经导致修改了文件,可能导致你在项目运行的时候发现一个很离奇的错误,我暂时没发现可以关闭自动保存的设置,如果你对此非有强迫症的话,vim的插件可能会帮助到你.
 2. IntelliJ中的文件是实时和本地文件同步的,所以Eclipse的刷新功能就不要问了,因为这东西根本不需要那个功能.有的编辑器会提醒你是否和本地文件更新,这里也是默认不给任何提醒的,只要你修改了,这里就会同步更新.
 3. 在主菜单`File`下面,有个奇怪的Power Save Mode,这里也说明下,这个顾名思义是省电模式.当你勾选此模式以后,IntelliJ不会给你完成任何自动完成的功能,例如本来你输入一个字符会自动提示的,勾选以后就没有了,如果出现此问题的话可以考虑是不是自己手贱点过这个按钮噢,这个还是比较适合开会的适合无聊看代码用的,又省电又不影响你看代码.
 4. Eclipse中有个`F2`的功能,可以查看到Java文件定义,你在Spring的配置文件中可能需要配置这个值,但是在IntelliJ中这个是不需要的,因为对于Spring这样的支持很是完善,你只需要在class的属性中输入class的名字然后`ctrl+空格 (Basic 这个在code的completion下面)`自动就完成了全路径,在智能的条件下可能就不需要蹩脚的实现.
+5. 项目刚开始导入或者清除cache重新打开的时候,下面的状态栏部分会显示Indexing,这个时候你就等着就可以了,基本你想做的事情什么都不能做,别在这个时候着急点来点去,不过它索引的速度挺快的,别着急.
+
 
 ## 最后
 
-第一次发文,如果有什么问题欢迎留言交流,文档放在[github](https://github.com/fxl545826/Documents)上,各位如果也有一些技巧不妨共同完善下本文档,只需要Fock然后Pull Request就可以了,如果你觉得有个github帐号过于麻烦,我个人觉得你还是转行比较合适.如果不想更新只是想订阅持续更新的内容,只需要Watch该项目即可,或者Star这样可以在自己的帐号部分快速找到本项目.
+第一次发文,如果有什么问题欢迎留言交流,文档放在[github](https://github.com/fxl545826/Documents)上,各位如果也有一些技巧不妨共同完善下本文档,只需要Fock然后Pull Request就可以了,如果你觉得有个github帐号过于麻烦,我个人觉得你还是转行比较合适.如果不想更新只是想订阅持续更新的内容,只需要Watch该项目即可,或者Star这样可以在自己的帐号页面快速找到本项目.
 
 ## 附录
 * Win快捷键 [Win Keymap](http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf)
