@@ -1,9 +1,10 @@
+#从Eclipse转移到IntelliJ IDEA一点心得
 个人使用IntelliJ其实并不太久，但是用了这段时间觉得的确很是好用，刚刚从Eclipse转过来的很多人开始可能很不适应，我这里就把我使用过程中的一些经验和一些常用的快捷键说下，当然在看这篇之前你需要先看完[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799),这篇翻译过来的文章对自动完成部分介绍的很好了,只是快捷键说明部分还可以更完善一些,可以照顾下默认绑定键位不一致的同鞋。本文在说明快捷键的时候会根据Mac OSX 10.5+的默认keymap来使用，当然也会提供相关的文字说明，如果和我的绑定不一致的可以直接去keymap中去搜索即可。
 
 ## 基本设置
 ### 显示行号
 这个以前在Eclipse中是个很简单的问题,转移到IntelliJ上以后的一些人也问过这个问题,使用同样的方式设置了以后发现只是对当前文件起作用了,打开另外一个文件依然没有行号,就好比你只是在vim中执行命令`set number`,而不是在.vimrc中设置一样的效果.这个是需要在IDE Settings中设置下的,如图所示勾选即可:
-![image](images/show_line_numbers.png)    
+![image](images/show_line_numbers.png) 
 其他设置可参照该设置项勾选即可,例如显示空格等等.
 
 ### 文件和导航关联
@@ -13,7 +14,7 @@
 ![image](images/source_autoscroll.png)
 如果你想和Eclipse的那个一样,让这一切自动的话,那么在上图的浮层中可以看到两个选项`AutoScroll to Source`和`AutoScroll from source`,IntelliJ很人性化的分了两个设置在里面,你两个都勾选就是基本和Eclipse的功能保持了完全一致,只是勾选一个自然也可以.
 
-还有一种方式就是利用IntelliJ提供**Navigation Bar**,这个功能是IntelliJ完全可以键盘化的一个特点之一吧,操作方式就是打开文件的时候,使用快捷键`⌘+UP (Jump to Navigation Bar)`,然后就会出现一个下拉,基本就是这个文件所在目录的文件列表,还可以使用**上下左右的键位**来选择其他目录,是不是很酷?操作好似比vim还更舒服?
+还有一种方式就是利用IntelliJ提供的**Navigation Bar**,这个功能可以算是IntelliJ完全可以键盘化的一个特点之一吧,操作方式就是打开文件的时候,使用快捷键`⌘+UP (Jump to Navigation Bar)`,然后就会出现一个下拉,基本就是这个文件所在目录的文件列表,还可以使用**上下左右的键位**来选择其他目录,是不是很酷?操作好似比vim还更舒服?
 
 **备注:**此处建议把`View > Navigation Bar`的选项点掉,这样就使用快捷键之后就会在你鼠标的位置出现,感觉会更输入一些,当然这样你就基本失去了使用鼠标的权利,这个需要你根据个人癖好使用即可.
 
