@@ -35,7 +35,7 @@
 * **同样单词之间跳转:**在Eclipse中的快捷键是`ctrl+k`,这个挺好用的,在IntelliJ中也不缺这个功能,但是在Mac OSX 10.5+的键位绑定中默认为空,据说Windows的默认绑定中是有绑定的,可以查询下,我自己绑定了一个`⌘+ctrl+k (Find Word at Caret)`,没有的需要自己绑定一个,然后还能结合其他的键位实现上一个`⌘+G (Find Next)`下一个`⌘+Shift+G (Find Previous)`的功能.很是实用.
 
 ##版本控制设置
-我们开发肯定是有版本控制的，大家以前Eclipse的时候在本地文件和版本库不一致的时候，那么文件以及所在的文件夹都会出现一个`〉`表示，大家能很轻松的看到本地文件修改了哪一些，但是IntelliJ中默认是不能这样的，只是给文件在修改的时候提供了颜色上的变化，如果想和Eclipse一样的话需要如下图把设置勾选就可以了
+我们开发肯定是有版本控制的，大家以前Eclipse的时候在本地文件和版本库不一致的时候，那么文件以及所在的文件夹都会出现一个`〉`表示，大家能很轻松的看到本地文件修改了哪一些，但是IntelliJ中默认是不能这样的，只是给文件在修改的时候提供了颜色上的变化，如果想和Eclipse一样的话需要如下图把设置勾选就可以了   
 ![vcs_show_dir_status](images/vcs_show_dir_status.png)
 其实看英文解释就可以明白了，这个默认开启以后如果想调整文件夹的显示颜色的时候就直接去`Settings > Editor > Colors & Fonts > File Status`中调整即可了，可以调整成自己喜欢的样子。
 
@@ -43,7 +43,7 @@
 IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource Bundle方式下想修改一个属性是相当方便的，可以在一个操作界面上修改所有语言的属性，这一切都是自动完成的，如下图所示：
 ![resource_bundle](images/resource_bundle.png)
 
-并且还很贴心的有一个排序和分组的功能，尤其是这个排序。但是在默认设置下中文的是默认显示为Unicode码的，其实勾选一个设置(`Settings > File Encodings`)就可以了，如下图：
+并且还很贴心的有一个排序和分组的功能，尤其是这个排序。但是在默认设置下中文的是默认显示为Unicode码的，其实勾选一个设置(`Settings > File Encodings`)就可以了，如下图：    
 ![resource_native_to_ascii](images/resource_native_to_ascii.png)
 这样设置以后所有Unicode显示的自动转化为其应该显示的语言了.
 
@@ -53,7 +53,7 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 在IntelliJ中如果你是传统的Java EE的结构(根目录下面有src,webMoudle这样的结构),那么在直接在Run Configurations中添加一个Tomcat即可,点击+号添加即可(当然需要注意虽然没搜索框,你输入字符会自动给你筛选结果),这样运行的时候修改Java文件的话需要主动Make Project也就是`⌘+F9 (Make Project)`.但是如果你是符合maven约定的项目结构的话如果继续这样配置就很不理想了,每次修改了jsp文件竟然也需要Make Project才可以,因为每次Make Project以后IntelliJ会自动给你DeployMent,这样好似又回到了几年前那种很麻烦的环境.
 
 这个问题其实很容易解决,就是不要使用这种方式来运行你的web项目,既然符合maven结构的项目自然是使用maven或者gradle这种构建工具了,那么你需要利用maven的jetty的插件来运行项目即可了,如下图配置即可:
-![idea-maven-run](images/idea-maven-run.png)
+![idea-maven-run](images/idea-maven-run.png)    
 当然你也可以如下图直接点击运行就会自动添加一个:
 ![maven-jetty-plugin-run](images/maven-jetty-plugin-run.png)       
 参看上图其实也没必须非用jetty,用tomcat6或者tomcat7的插件运行也可以.
@@ -87,10 +87,12 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 1. 我们先查看**Modules**中的**Sources**,如下图:
 ![project_structure_modules_sources](images/project_structure_modules_sources.png)   
 把项目所有的源码都添加即可,图中所示我的项目中其实少了resource的文件夹,这样我选中resource然后点击Sources即可,这样就会在左边的Source Folders中添加一个resource的文件夹.
-2. 然后是Paths部分,这个主要是class的输出路径,默认是在根目录下的out文件夹中,如果项目中对配置文件的解析等有写死路径,必须严格遵循Java EE的规范的话,那么需要将此部分修改如下(如果不存在我假设的情况可忽略本步骤):![project_structure_modules_paths](images/project_structure_modules_paths.png)    
+2. 然后是Paths部分,这个主要是class的输出路径,默认是在根目录下的out文件夹中,如果项目中对配置文件的解析等有写死路径,必须严格遵循Java EE的规范的话,那么需要将此部分修改如下(如果不存在我假设的情况可忽略本步骤):    
+![project_structure_modules_paths](images/project_structure_modules_paths.png)    
 3. 然后的Dependencies,就更好配置了,添加需要的依赖即可.
 
-这些步骤完成以后我们就可以点击`Run > Edit Configurations` ,点击左上角的**+**号,然后选择**Tomcat > Local Server **,这些步骤和Eclipse类似,选择相应路径等等,只需要注意一点就可以,就是需要添加一个DeployMent,如下图:![run_configurations_tomcat](images/run_configurations_tomcat.png)    
+这些步骤完成以后我们就可以点击`Run > Edit Configurations` ,点击左上角的**+**号,然后选择**Tomcat > Local Server **,这些步骤和Eclipse类似,选择相应路径等等,只需要注意一点就可以,就是需要添加一个DeployMent,如下图:    
+![run_configurations_tomcat](images/run_configurations_tomcat.png)    
 **如果是Windows的图中的DeployMent中的+号可能是在右侧**,点击之后会弹出对话框选择文件夹,选择eclipse默认的webMoudle文件夹即可(MyEclipse就是WebRoot文件夹),这个一定不能选错,不要选成项目的主文件夹,否则运行就不成功了,再然后`ctrl+R`运行即可.以debug方式运行就是`ctrl+D`.
 
 
@@ -99,9 +101,9 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 基本参照上个基本都类似,就是步骤比上个步骤要少点,如果出现问题参照上个章节即可.
 
 ## HQL查询支持
-以前Eclipse有个HQL的插件可以直接输入HQL语法,查询测试结果是否正确,在IntelliJ中你也可以,不过不需要任何插件默认提供支持的,如果在导入项目的时候没有自动添加Hibernate的支持的话,那需要添加一下Hibernate的支持,鼠标选中项目,点击右键如下图:
+以前Eclipse有个HQL的插件可以直接输入HQL语法,查询测试结果是否正确,在IntelliJ中你也可以,不过不需要任何插件默认提供支持的,如果在导入项目的时候没有自动添加Hibernate的支持的话,那需要添加一下Hibernate的支持,鼠标选中项目,点击右键如下图:     
 ![image](images/add_support_framework.png)    
-点击选择Hibernate即可,如果没有Hibernate应该是项目已经自动添加了Hibernate的支持了.然后完成以后就可以如下图操作即可:
+点击选择Hibernate即可,如果没有Hibernate应该是项目已经自动添加了Hibernate的支持了.然后完成以后就可以如下图操作即可:    
 ![image](images/hql_search.png)    
 选中上面HQL图标,在出来的控制台输入你想输入的HQL即可了,一样可以自动完成的哦.
 
