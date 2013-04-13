@@ -54,12 +54,12 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 
 这个问题其实很容易解决,就是不要使用这种方式来运行你的web项目,既然符合maven结构的项目自然是使用maven或者gradle这种构建工具了,那么你需要利用maven的jetty的插件来运行项目即可了,如下图配置即可:
 ![idea-maven-run](images/idea-maven-run.png)    
-当然你也可以如下图直接点击运行就会自动添加一个:
+当然你也可以如下图直接点击运行就会自动添加一个:    
 ![maven-jetty-plugin-run](images/maven-jetty-plugin-run.png)       
 参看上图其实也没必须非用jetty,用tomcat6或者tomcat7的插件运行也可以.
 
 ##Eclipse的web结构项目如何导入和运行
-鉴于有一些用户还没转型Maven等来构建项目,当然我也衷心的说一句,构建这块还是赶紧转了吧.因为不转的话还单独出来这个章节,并且有的操作还是相当麻烦,下面也会讲到,还是一一道来吧,导入的时候有两个选择然后我分两个部分说明,点击`File > Import Project…`,然后选择你的项目目录,点击OK,如下图:
+鉴于有一些用户还没转型Maven等来构建项目,当然我也衷心的说一句,构建这块还是赶紧转了吧.因为不转的话还单独出来这个章节,并且有的操作还是相当麻烦,下面也会讲到,还是一一道来吧,导入的时候有两个选择然后我分两个部分说明,点击`File > Import Project…`,然后选择你的项目目录,点击OK,如下图:    
 ![image](images/import_eclipse_web_project.png)
 
 ### 使用新建项目来导入
