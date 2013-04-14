@@ -23,7 +23,7 @@
 
 这里主要介绍几个可能大家常用的,或者是你可能并不知道IntelliJ中有这样的几个快捷键,特别常用的你直接参照官网的Keymap介绍[Getting Started](http://www.jetbrains.com/idea/documentation/index.jsp)就可以了,学会在Keymap中自己查询需要的快捷键是主要的,不要每次都打开那个没用的百度,具体绑定可以参照本文最后给出的链接.
 ### outline调出
-以前在Eclipse中用的很多的一个快捷键就是ctrl+o,这样可以调出Java文件的所有成员变量和方法,并且可以支持搜索很是方便,IntelliJ这种基本的功能自然是有,新手的话还经常问,这个在IntellJ中的快捷键是`⌘+F12 (File Structure)`,如果你不是Mac OSX 10.5+键位绑定的话,小括号中的内容就是你可以去Keymap中去搜索的内容.
+以前在Eclipse中用的很多的一个快捷键就是`ctrl+o`,这样可以调出Java文件的所有成员变量和方法,并且可以支持搜索很是方便,IntelliJ这种基本的功能自然是有,新手的话还经常问,这个在IntellJ中的快捷键是`⌘+F12 (File Structure)`,如果你不是Mac OSX 10.5+键位绑定的话,小括号中的内容就是你可以去Keymap中去搜索的内容.
 
 ###基本操作
 
@@ -31,7 +31,7 @@
 * **根据符号选择文本:**这个键位用的太多了,并且也是非常的好用,举个例子,有这样一行代码`<name>SpringSource Milestones Proxy</name>` 你光标在Milestones中的某一个位置,你想替换`SpringSource Milestones Proxy`为其他单词,假设想替换为`Test XX`,其实这样你只需要`Option+Up (Select Word at Caret)`两下就可以选中你想要的单词了,当你想在开发过程中,你会发现这个键位用的太多了,多到换了其他没有这个键位的编辑器或者IDE上,很是不习惯.
 * **删除整行:** 可以直接`⌘+delete (Delete Line)`或者利用IntelliJ智能的功能,剪切的快捷键,当本行选中文本的时候剪切``⌘+x`会按照选中的文本实现剪切,但是你本行内无任何选中文本的时候会自动剪切整行,那么自然就类似一个删除本行的快捷键,但是这个其实还是比较蹩脚的,建议使用`⌘+delete`.
 * **想直接跳转到接口的实现方法:** `⌘+option+鼠标单击`或者`⌘+option+B`.
-* **语句自动完成 Statements completion:**这个在[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799)中已经说明,这里还是着重说下,因为的确很好用,也强烈推荐下,还有文中说的`智能自动完成 ⌘+shift+Space`,当给你的提示太多的时候,这个键绝对会给你惊喜.
+* **语句自动完成 Statements completion:**这个在[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799)中已经说明,这里还是着重说下,因为的确很好用,也强烈推荐下,还有文中说的`智能自动完成 ctrl+shift+Space`,当给你的提示太多的时候,这个键绝对会给你惊喜.
 * **同样单词之间跳转:**在Eclipse中的快捷键是`ctrl+k`,这个挺好用的,在IntelliJ中也不缺这个功能,但是在Mac OSX 10.5+的键位绑定中默认为空,据说Windows的默认绑定中是有绑定的,可以查询下,我自己绑定了一个`⌘+ctrl+k (Find Word at Caret)`,没有的需要自己绑定一个,然后还能结合其他的键位实现上一个`⌘+G (Find Next)`下一个`⌘+Shift+G (Find Previous)`的功能.很是实用.
 
 ##版本控制设置
@@ -95,7 +95,8 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 3. 然后的Dependencies,就更好配置了,添加需要的依赖即可.
 
 这些步骤完成以后我们就可以点击`Run > Edit Configurations` ,点击左上角的**+**号,然后选择**Tomcat > Local Server **,这些步骤和Eclipse类似,选择相应路径等等,只需要注意一点就可以,就是需要添加一个DeployMent,如下图:    
-![run_configurations_tomcat](images/run_configurations_tomcat.png)    
+![run_configurations_tomcat](images/run_configurations_tomcat.png) 
+   
 **如果是Windows的图中的DeployMent中的+号可能是在右侧**,点击之后会弹出对话框选择文件夹,选择eclipse默认的webMoudle文件夹即可(MyEclipse就是WebRoot文件夹),这个一定不能选错,不要选成项目的主文件夹,否则运行就不成功了,再然后`ctrl+R`运行即可.以debug方式运行就是`ctrl+D`.
 
 
@@ -111,11 +112,14 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 选中上面HQL图标,在出来的控制台输入你想输入的HQL即可了,一样可以自动完成的哦.
 
 ## 注意事项
-1. IntelliJ对于文件是默认随时保存的,基本不需要你`⌘+s`,所以需要注意不要随手不小心把某个文件改了下,然后直接关闭标签了,其实你的无意的操作已经导致修改了文件,可能导致你在项目运行的时候发现一个很离奇的错误,我暂时没发现可以关闭自动保存的设置,如果你对此非有强迫症的话,vim的插件可能会帮助到你.
+1. IntelliJ对于文件是默认随时保存的,基本不需要你`⌘+s`(这个键位默认是保存所有),所以需要注意不要随手不小心把某个文件改了下,然后直接关闭标签了,其实你的无意的操作已经导致修改了文件,可能导致你在项目运行的时候发现一个很离奇的错误,我暂时没发现可以关闭自动保存的设置,如果你对此非有强迫症的话,vim的插件可能会帮助到你.
 2. IntelliJ中的文件是实时和本地文件同步的,所以Eclipse的刷新功能就不要问了,因为这东西根本不需要那个功能.有的编辑器会提醒你是否和本地文件更新,这里也是默认不给任何提醒的,只要你修改了,这里就会同步更新.
 3. 在主菜单`File`下面,有个奇怪的Power Save Mode,这里也说明下,这个顾名思义是省电模式.当你勾选此模式以后,IntelliJ不会给你完成任何自动完成的功能,例如本来你输入一个字符会自动提示的,勾选以后就没有了,如果出现此问题的话可以考虑是不是自己手贱点过这个按钮噢,这个还是比较适合开会的适合无聊看代码用的,又省电又不影响你看代码.
 4. Eclipse中有个`F2`的功能,可以查看到Java文件定义,你在Spring的配置文件中可能需要配置这个值,但是在IntelliJ中这个是不需要的,因为对于Spring这样的支持很是完善,你只需要在class的属性中输入class的名字然后`ctrl+空格 (Basic 这个在code的completion下面)`自动就完成了全路径,在智能的条件下可能就不需要蹩脚的实现.
 5. 项目刚开始导入或者清除cache重新打开的时候,下面的状态栏部分会显示Indexing,这个时候你就等着就可以了,基本你想做的事情什么都不能做,别在这个时候着急点来点去,不过它索引的速度挺快的,别着急.
+6. Eclipse有个Save Actions的功能,主要是针对Java可以自动格式化以及优化import等功能,这个在IntelliJ上其实默认是没有的,想完成这功能基本可以两个思路:
+	* 利用**宏录制**,宏在开始以后你就格式化下代码,然后优化下import等操作,然后结束把宏定义一个`⌘+s`,不过问题就是不管什么文件都会执行这个宏,不仅仅是java文件,我就是利用这个宏主要完成把tab转为空格.
+	* 使用**Eclipse Code Formatter**,这个插件基本和Eclipse默认的功能类似,但是也有少许区别,用户自己思量是否使用即可.
 
 
 ## 最后
