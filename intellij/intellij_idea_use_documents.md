@@ -1,9 +1,9 @@
 #从Eclipse转移到IntelliJ IDEA一点心得
-本人使用IntelliJ IDEA其实并不太久，用了这段时间以后，觉得的确很是好用。刚刚从Eclipse转过来的很多人开始可能很不适应，我就把使用过程中的一些经验和常用功能分享下，当然在看这篇之前推荐你先看完[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799)，这篇文章对自动完成的特性介绍的非常好，只是快捷键说明部分还可以更完善一些，可以照顾下默认绑定键位不一致的童鞋。本文在说明快捷键的时候是根据Mac OSX 10.5+的默认keymap，当然也会提供相关的文字说明，如果和我的绑定不一致的可以直接去keymap中搜索即可。
+本人使用IntelliJ IDEA其实并不太久，用了这段时间以后，觉得的确很是好用。刚刚从Eclipse转过来的很多人开始可能不适应，我就把使用过程中的一些经验和常用功能分享下，当然在看这篇之前推荐你先看完[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799)，这篇文章对自动完成的特性介绍的非常好，只是快捷键说明部分还可以更完善一些，可以照顾下默认绑定键位不一致的童鞋。本文在说明快捷键的时候是根据Mac OSX 10.5+的默认keymap，当然也会提供相关的文字说明，如果和我的绑定不一致的可以直接去keymap中搜索即可。
 
 ## 基本设置
 ### 显示行号
-这个以前在Eclipse中是个很简单的问题，转移到IntelliJ上以后的一些人也问过这个问题。使用同样的方式设置了以后发现只是对当前文件起作用了，打开另外一个文件依然没有行号。就好比你只是在vim中执行命令`set number`，而不是在.vimrc中设置一样的效果.这个是需要在IDE Settings中设置下的，如图所示勾选即可:
+这个以前在Eclipse中是个很简单的问题，转移到IntelliJ上以后的一些人也问过这个问题。使用同样的方式设置了以后发现只是对当前文件起作用了，打开另外一个文件依然没有行号。就好比你只是在vim中执行命令`set number`，而不是在.vimrc中设置一样的效果。这个是需要在IDE Settings中设置下的，如图所示勾选即可:
 ![image](images/show_line_numbers.png) 
 其他设置可参照该设置项勾选即可，例如显示空格等等.
 
@@ -14,25 +14,25 @@
 ![image](images/source_autoscroll.png)
 如果你想和Eclipse的那个一样，让这一切自动的话，那么在上图的浮层中可以看到两个选项`AutoScroll to Source`和`AutoScroll from source`，IntelliJ很人性化的分了两个设置在里面，你两个都勾选就是基本和Eclipse的功能保持了完全一致，只是勾选一个自然也可以.
 
-还有一种方式就是利用IntelliJ提供的**Navigation Bar**，IntelliJ很多功能操作都可以键盘化，这个就是喜欢键盘化操作的人的必备功能，操作方式就是打开文件的时候，使用快捷键`⌘+UP (Jump to Navigation Bar)`，然后就会出现一个下拉，基本就是这个文件所在目录的文件列表，还可以使用**上下左右的键位**来选择其他目录，是不是很酷?
+还有一种方式就是利用IntelliJ提供的**Navigation Bar**，IntelliJ很多功能操作都可以键盘化，这个就是喜欢键盘化操作的人的必备功能，操作方式就是打开文件的时候，使用快捷键`⌘+UP (Jump to Navigation Bar)`，然后就会出现一个下拉，基本就是这个文件所在目录的文件列表，还可以使用**上下左右的键位**来选择其他目录，是不是很酷？
 
-**备注:**此处建议把`View > Navigation Bar`的选项点掉，这样就使用快捷键之后就会在你鼠标的位置出现，感觉会更输入一些，当然这样你就基本失去了使用鼠标的权利，这个需要你根据个人癖好使用即可.
+**备注:**此处建议把`View > Navigation Bar`的选项点掉，这样就使用快捷键之后就会在你鼠标的位置出现，感觉会更输入一些，当然这样你就基本失去了使用鼠标的权利，这个需要你根据个人癖好使用即可。
 
 ## 快捷键使用
 如果你是苹果电脑用户的话，建议你改成Mac OSX 10.5+的键位绑定，因为Mac OSX 10.5这个兼容Windows的版本的键位实在是太蹩脚了，用着是真难受，好比你默认习惯`⌘+w`是关闭标签，在这个键位绑定中竟然是根据符号选择文本的一个快捷键.
 
-这里主要介绍几个可能大家常用的，或者是你可能并不知道IntelliJ中有的几个快捷键，特别常用的你直接参照官网的Keymap介绍[Getting Started](http://www.jetbrains.com/idea/documentation/index.jsp)就可以了。学会在Keymap中自己查询需要的快捷键是主要的，不要每次都打开那个没用的百度，具体可以参照本文最后给出的链接.
+这里主要介绍几个可能大家常用的，或者是你可能并不知道IntelliJ中有的几个快捷键，特别常用的你直接参照官网的Keymap介绍[Getting Started](http://www.jetbrains.com/idea/documentation/index.jsp)就可以了。学会在Keymap中自己查询需要的快捷键是主要的，不要每次都打开那个没用的百度，具体可以参照本文最后给出的链接。
 ### Outline调出
-以前在Eclipse中用的很多的一个快捷键就是`ctrl+o`，这样可以调出代码文件的所有成员变量和方法，并且可以支持搜索很是方便，IntelliJ这种基本的功能自然是有，新手的话还经常问，这个在IntellJ中的快捷键是`⌘+F12 (File Structure)`。如果你不是Mac OSX 10.5+键位绑定的话，小括号中的内容就是你可以去Keymap中去搜索的内容.
+以前在Eclipse中用的很多的一个快捷键就是`ctrl+o`，这样可以调出代码文件的所有成员变量和方法，并且可以支持搜索很是方便，IntelliJ这种基本的功能自然是有，新手的话还经常问，这个在IntellJ中的快捷键是`⌘+F12 (File Structure)`。如果你不是Mac OSX 10.5+键位绑定的话，小括号中的内容就是你可以去Keymap中去搜索的内容。
 
 ###基本操作
 
-* **复制整行或者块:**在Eclipse中使用`ctrl+alt+Up`，IntelliJ默认是`⌘+D (Duplicate Line or Block)`，其实这个和Eclipse中的有差距，尤其是多行的时候或者选中内容的时候，不信你可以试试。所以你可以把Keymap中的`Duplicate Lines`定义上一个快捷键，我定义的是`Option+D`，这个键位在我的默认绑定中是没任何快捷键的，你可以自己绑定一个试试.
-* **根据符号选择文本:**这个键位用的太多了，并且也是非常的好用，举个例子，有这样一行代码`<name>SpringSource Milestones Proxy</name>` 你光标在Milestones中的某一个位置，你想替换`SpringSource Milestones Proxy`为其他单词，假设想替换为`Test XX`，其实这样你只需要`Option+Up (Select Word at Caret)`两下就可以选中你想要的单词了，当你想在开发过程中，你会发现这个键位用的太多了，多到换了其他没有这个键位的编辑器或者IDE上，很是不习惯.
-* **删除整行:** 可以直接`⌘+delete (Delete Line)`或者利用IntelliJ智能的功能，剪切的快捷键，当本行选中文本的时候剪切``⌘+x`会按照选中的文本实现剪切，但是你本行内无任何选中文本的时候会自动剪切整行，那么自然就类似一个删除本行的快捷键，但是这个其实还是比较蹩脚的，建议使用`⌘+delete`.
-* **想直接跳转到接口的实现方法:** `⌘+option+鼠标单击`或者`⌘+option+B`.
+* **复制整行或者块:**在Eclipse中使用`ctrl+alt+Up`，IntelliJ默认是`⌘+D (Duplicate Line or Block)`，其实这个和Eclipse中的有差距，尤其是多行的时候或者选中内容的时候，不信你可以试试。所以你可以把Keymap中的`Duplicate Lines`定义上一个快捷键，我定义的是`Option+D`，这个键位在我的默认绑定中是没任何快捷键的，你可以自己绑定一个试试。
+* **根据符号选择文本:**这个键位用的太多了，并且也是非常的好用，举个例子，有这样一行代码`<name>SpringSource Milestones Proxy</name>` 你光标在Milestones中的某一个位置，你想替换`SpringSource Milestones Proxy`为其他单词，假设想替换为`Test XX`，其实这样你只需要`Option+Up (Select Word at Caret)`两下就可以选中你想要的单词了，当你想在开发过程中，你会发现这个键位用的太多了，多到换了其他没有这个键位的编辑器或者IDE上，很是不习惯。
+* **删除整行:** 可以直接`⌘+delete (Delete Line)`或者利用IntelliJ智能的功能，剪切的快捷键，当本行选中文本的时候剪切``⌘+x`会按照选中的文本实现剪切，但是你本行内无任何选中文本的时候会自动剪切整行，那么自然就类似一个删除本行的快捷键，但是这个其实还是比较蹩脚的，建议使用`⌘+delete`。
+* **想直接跳转到接口的实现方法:** `⌘+option+鼠标单击`或者`⌘+option+B`。
 * **语句自动完成 Statements completion:**这个在[IntelliJ IDEA 的 20 个代码自动完成的特性](http://www.oschina.net/question/12_70799)中已经说明，这里还是着重说下，因为的确很好用，也强烈推荐下，还有文中说的`智能自动完成 ctrl+shift+Space`，当给你的提示太多的时候，这个键绝对会给你惊喜.
-* **同样单词之间跳转:**在Eclipse中的快捷键是`ctrl+k`，这个挺好用的，在IntelliJ中也不缺这个功能，但是在Mac OSX 10.5+的键位绑定中默认为空。据说Windows的默认绑定中是有绑定的，自己可以查询下，我自己绑定了一个`⌘+ctrl+k (Find Word at Caret)`，没有的需要自己绑定一个，然后还能结合其他的键位实现上一个`⌘+G (Find Next)`下一个`⌘+Shift+G (Find Previous)`的功能.很是实用.
+* **同样单词之间跳转:**在Eclipse中的快捷键是`ctrl+k`，这个挺好用的，在IntelliJ中也不缺这个功能，但是在Mac OSX 10.5+的键位绑定中默认为空。据说Windows的默认绑定中是有绑定的，自己可以查询下，我自己绑定了一个`⌘+ctrl+k (Find Word at Caret)`，没有的需要自己绑定一个，然后还能结合其他的键位实现上一个`⌘+G (Find Next)`下一个`⌘+Shift+G (Find Previous)`的功能.很是实用。
 
 ##版本控制设置
 我们开发肯定是有版本控制的，大家以前Eclipse的时候在本地文件和版本库不一致的时候，那么文件以及所在的文件夹都会出现一个`〉`表示，大家能很轻松的看到本地文件修改了哪一些，但是IntelliJ中默认是不能这样的。仅仅是给变化的文件在修改的时候提供了颜色上的变化，不包括其所在的各个父级文件夹哦，如果想和Eclipse一样的话需要如下图把设置勾选就可以了   
