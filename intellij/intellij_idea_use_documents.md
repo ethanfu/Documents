@@ -124,6 +124,8 @@ IntelliJ在资源文件这方面个人觉得也是完胜Eclipse的，在Resource
 	* 利用**宏录制**，宏在开始以后你就格式化下代码，然后优化下import等操作，然后结束把宏定义一个`⌘+s`，不过问题就是不管什么文件都会执行这个宏，不仅仅是java文件，我就是利用这个宏主要完成把tab转为空格。
 	* 使用**Eclipse Code Formatter**的插件，这个插件基本和Eclipse默认的功能类似，但是也有少许区别，用户自己思量是否使用即可。
 7. 在Mac下IntelliJ代码区域是支持手势放大的，这个在给别人演示的时候很是方便。但是Run、Debug等视图的时候默认能使想到的就是手动的拖动大小，很是不便。你可以尝试下`⌘+shift+up/down (Stretch to Top / Bottom)`，当然其他的project视图等的也都可以利用这个快捷键配置上下左右的方向键来配置使用，方便的很，强烈推荐使用。
+8. Eclipse中可以同一个窗口打开多个项目，但是IntelliJ IDEA在这里的设计是不一样的，具体可以参看[IntelliJ IDEA Q&A for Eclipse Users](http://www.jetbrains.com/idea/documentation/migration_faq.html)。
+9. jar的source依赖问题，如果你是使用Maven的话都是可以自动完成的，只需要你发布出你的source jar就可以，但是如果你项目不是使用maven的话你就需要在项目配置的依赖的地方，点击你的需要引入source的jar，然后右键编辑，add你的本地source目录就可以了，不需要做Project的多个moudle即可，这里和Eclipse中的基本相似。
 
 
 ## 最后
